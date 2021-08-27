@@ -21,11 +21,10 @@ def create_category(request):
     category.save()
     return HttpResponseRedirect(reverse("michelin:index"))
 
-def detail(request):
-    pass
-
-def delete_detail(request):
-    pass
-
-def update_detail(request):
-    pass
+def show_restaurants(request, category_id):
+    selected_category = Category.objects.get(id = category_id)
+    restaurants = selected_category.restaurant_set.all()
+    return render(request, "./restaurants.html", {
+        "category": selected_category,
+        "restaurants": restaurants
+    })

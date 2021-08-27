@@ -9,6 +9,7 @@
 <body>
     <h1>새 카테고리 생성하기</h1>
     <form action="{% url 'michelin:create_category' %}" method="POST">
+        {% csrf_token %}
         <label for="name">카테고리 이름:</label>
         <input type="text" name="name" id="name">
         <button type="submit">생성!</button>
