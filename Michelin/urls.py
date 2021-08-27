@@ -10,5 +10,6 @@ urlpatterns = [
     path("<int:category_id>/restaurants", views.show_restaurants, name = "show_restaurants"),
     path("<int:category_id>/restaurants/new_restaurant", views.new_restaurant, name = "new_restaurant"),
     path("<int:category_id>/restaurants/new_restaurant/create", views.create_restaurant, name = "create_restaurant"),
-    path("<int:category_id>/restaurants/<int:restaurant_id>", views.show_detail, name = "show_detail")
+    path("<int:category_id>/restaurants/<int:restaurant_id>", views.show_detail, name = "show_detail"),
+    path("<int:category_id>/restaurants/<int:restaurant_id>/delete", views.delete_restaurant, name = "delete_restaurant")
 ]
