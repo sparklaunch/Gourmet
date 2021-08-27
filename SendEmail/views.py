@@ -8,7 +8,7 @@ def index(request):
     content = request.POST["content"]
     new_email = Email(address = address, title = title, content = content)
     new_email.save()
-    return render(request, "./index.html", {
+    return render(request, "./email_index.html", {
         "address": address,
         "title": title,
         "content": content

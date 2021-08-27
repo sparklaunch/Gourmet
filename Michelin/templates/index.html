@@ -22,7 +22,7 @@
     <p>카테고리 없음</p>
     {% endif %}
     <h3>이메일 보내기</h3>
-    <form action="/send_email" method="POST">
+    <form action="/send_email/" method="POST">
         {% csrf_token %}
         <label for="address">수신자 주소</label>
         <input type="text" name="address" id="address" placeholder="수신자 이메일 주소를 입력하세요...">
