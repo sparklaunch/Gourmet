@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새 맛집 생성</title>
+</head>
+<body>
+    <h1>{{ category.name }}에 대한 새 맛집 등록하기</h1>
+    <form action="{% url 'michelin:create_restaurant' category.id %}" method="POST">
+        {% csrf_token %}
+        <label for="name">맛집 이름:</label>
+        <input type="text" name="name" id="name" placeholder="맛집 이름을 입력하세요...">
+        <label for="link">맛집 링크:</label>
+        <input type="text" name="link" id="link" placeholder="맛집 링크를 입력하세요...">
+        <label for="description">맛집 설명:</label>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="맛집에 대한 설명을 추가하세요..."></textarea>
+        <label for="keyword">맛집 키워드:</label>
+        <input type="text" name="keyword" id="keyword" placeholder="맛집 키워드를 입력하세요...">
+        <button type="submit">등록!</button>
+    </form>
+</body>
+</html>

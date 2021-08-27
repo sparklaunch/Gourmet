@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>{{ category.name }}에 대한 맛집 목록</h1>
+    <a href="{% url 'michelin:new_restaurant' category.id %}">맛집 추가하러 가기</a>
     {% if restaurants %}
     <ol>
         {% for restaurant in restaurants %}

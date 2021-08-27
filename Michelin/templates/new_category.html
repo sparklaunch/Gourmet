@@ -11,7 +11,7 @@
     <form action="{% url 'michelin:create_category' %}" method="POST">
         {% csrf_token %}
         <label for="name">카테고리 이름:</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" placeholder="카테고리 이름을 입력하세요...">
         <button type="submit">생성!</button>
     </form>
 </body>
