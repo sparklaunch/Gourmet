@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant.name }}</title>
+</head>
+<body>
+    <h1>{{ category.name }} 카테고리의 {{ restaurant.name }}에 대한 상세 정보</h1>
+    <h2>키워드: {{ restaurant.keyword }}</h2>
+    <a href="{{ restaurant.link }}">맛집 웹사이트 방문하기</a>
+    <p>{{ restaurant.description }}</p>
+    <a href="{% url 'michelin:show_restaurants' category.id %}">맛집 화면으로 돌아가기</a>
+</body>
+</html>

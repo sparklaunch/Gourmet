@@ -44,3 +44,11 @@ def create_restaurant(request, category_id):
     new_restaurant = Restaurant(name = name, link = link, description = description, keyword = keyword, category = selected_category)
     new_restaurant.save()
     return HttpResponseRedirect(reverse("michelin:show_restaurants", args = (category_id,)))
+
+def show_detail(request, category_id, restaurant_id):
+    selected_category = Category.objects.get(id = category_id)
+    selected_restaurant = selected_category.restaurant_set.get(id = restaurant_id)
+    return render(request, "./restaurant_detail.html", {
+        "category": selected_category,
+        "restaurant": selected_restaurant
+    })
