@@ -15,6 +15,7 @@
         {% for category in categories %}
         <li>{{ category.name }}
             <a href="{% url 'michelin:show_restaurants' category.id %}">상세 보기</a>
+            <a href="{% url 'michelin:delete_category' category.id %}">삭제</a>
         </li>
         {% endfor %}
     </ul>

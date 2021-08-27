@@ -52,3 +52,7 @@ def show_detail(request, category_id, restaurant_id):
         "category": selected_category,
         "restaurant": selected_restaurant
     })
+
+def delete_category(request, category_id):
+    Category.objects.filter(id = category_id).delete()
+    return HttpResponseRedirect(reverse("michelin:index"))

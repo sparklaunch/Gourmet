@@ -14,6 +14,6 @@ class Restaurant(models.Model):
     date = models.DateTimeField(default = timezone.now())
     description = models.TextField()
     keyword = models.CharField(max_length = 50)
-    category = models.ForeignKey(Category, on_delete = models.SET_DEFAULT, default = 3)
+    category = models.ForeignKey(Category, on_delete = models.CASCADE)
     def __str__(self):
         return self.name
