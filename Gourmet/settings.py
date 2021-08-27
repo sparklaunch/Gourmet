@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "Michelin.apps.MichelinConfig",
+    "SendEmail.apps.SendemailConfig"
 ]
 
 MIDDLEWARE = [
